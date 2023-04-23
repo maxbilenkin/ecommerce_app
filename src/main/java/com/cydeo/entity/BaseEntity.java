@@ -1,22 +1,19 @@
 package com.cydeo.entity;
 
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import java.util.List;
+import javax.persistence.MappedSuperclass;
 
-@Entity
+@MappedSuperclass
 @Getter
 @Setter
-@NoArgsConstructor
-public class Category extends BaseEntity {
+public class BaseEntity {
 
-    private String name;
-
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 }
